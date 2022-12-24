@@ -1,0 +1,52 @@
+<div class="container-fluid">
+    <div class="row bg-danger topbar">
+        <div class="col-10">
+            <p class="p-2 text-end">Should you have inquiries, contact us<br><span>410-802-3815</span></p>
+        </div>
+        <div class="col-2 pt-2">
+            <i class="bi bi-whatsapp"></i>
+            <i class="bi bi-twitter"></i>
+            <i class="bi bi-facebook"></i>
+        </div>
+    </div>
+    <div class="row topnav">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="{% url 'home' %}"><img src="{{info.logo.url}}"></a> 
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="{% url 'home' %}">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">About us</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'service' %}">Services</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'career' %}">Careers</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Forms</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Contact Us</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+    </div>
+</div>
+
+{% for item in messages %}
+<div class="alert alert-success alert-dismissible fade show mb-0 text-center" role="alert">
+  <strong>{{item}}</strong>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endfor %}
+  

@@ -1,0 +1,407 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+
+/* header section */
+.topbar{
+    background: linear-gradient(to left, rgb(1, 107, 38), rgb(24, 255, 7));
+}
+.topbar i{
+    color: white;
+    font-size: 35px;
+    cursor: pointer;
+}
+.topbar i:hover{
+    color: #ffa600;
+}
+.topbar p{
+    color: white;
+}
+.topbar p span{
+    font-size: 25px;
+}
+.topbar i{
+    font-size: 50px;
+}
+.topnav ul li{
+    margin-left: 4px;
+}
+.topnav ul a{
+    color: black;
+    font-weight: 600;
+}
+.topnav img{
+    height: 50px;
+}
+/* header section done */
+
+/* carousel section  */
+.carofind{
+    background: linear-gradient(rgba(223, 141, 34, 0.892), rgba(223,141,34,0.9)), url(../img/4.jpg);
+    height: 100%;
+}
+.carofind h4{
+    text-transform: capitalize;
+    color: white;
+    padding-top: 25%;
+    font-size: 35px;
+    font-weight: 400;
+    padding-left: 5%;
+}
+.carofind h4 span{
+    text-transform: none;
+    font-weight: 700;
+    font-size: 40px;
+}
+.carofind p{
+    color: white;
+    padding-left: 5%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+.carofind a button{
+    color: white;
+    margin-left: 5%;
+    border: 2px solid white;
+    text-transform: capitalize;
+    font-size: 30px;
+}
+.carofind a button:hover{
+    color: white;
+    border: none;
+    background-color: green;
+}
+/* carousel section done */
+
+/* content section */
+.welcome h1{
+    padding-top: 5%;
+    text-transform: capitalize;
+    text-align: center;
+    font-size: 50px;
+}
+.welcome h1 span{
+    color: green;
+}
+.welcome p{
+    /* text-align: center; */
+    font-size: 18px;
+}
+.welcimg img{
+    height: 300px;
+}
+.service h1{
+    text-align: center;
+    padding-top: 3%;
+    font-size: 50px;
+    color: green;
+    text-transform: capitalize;
+}
+.accordion-item button{
+    font-weight: bold !important;
+}
+.accordion-button:focus{
+    box-shadow: none !important;
+}
+.accordion-button:hover{
+    background: green !important;
+    color: white;
+}
+.accordion-button:not(.collapsed){
+    color: white !important;
+    background: green !important;
+}
+.mission h1{
+    text-align: center;
+    padding-top: 10%;
+    font-size: 40px;
+    color: black;
+    text-transform: capitalize;
+}
+.mission{
+    text-align: center;
+}
+.appoint{
+    background: #ffa600;
+}
+.appoint img{
+    padding: 5%;
+    height: 200px;
+    width: 200px;
+}
+.appoint p{
+    padding-top: 7%;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+.appoint p button{
+    background: green;
+    color: white;
+    border: none;
+    padding: 1%;
+    border-radius: 1rem;
+}
+/* content section done */
+
+/* footer */
+.footer1{
+    background: linear-gradient(to top, rgb(1, 107, 38), rgb(24, 255, 7));
+}
+.footer1 .foota{
+    text-align: center;
+}
+.footer1 .footb{
+    text-align: center;
+    text-transform: capitalize;
+}
+.foota img{
+    height: 50px;
+}
+.footb a{
+    text-decoration: none;
+}
+.footb li{
+    color: black;
+}
+.footc h4{
+    text-transform: capitalize;
+}
+.footc p{
+    color: black;
+}
+.footc i{
+    color: white;
+    font-size: 30px;
+}
+.footer2{
+    background-color: black;
+}
+.footer2 p{
+    color: white;
+    text-transform: capitalize;
+    text-align: center;
+    padding: 2%;
+}
+/* footer done */
+
+/* about  */
+.aboutbanner{
+    background-image: url(../img/District-of-Columbia.jpg);
+    height: 70vh;
+}
+.aboutbanner h1{
+    /* padding-top: 29%; */
+    background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.5));
+    color: white;
+    padding-bottom: 1.5%;
+}
+.about h2::after{
+    content: '';
+    display: block;
+    width: 70%;
+    height: 3px;
+    background: green;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1%;
+}
+/* about done */
+
+/* services  */
+.srow{
+    text-align: center;
+}
+.scont span{
+    font-weight: bold;
+}
+.servicebanner{
+    background-image: url(../img/District-of-Columbia.jpg);
+    height: 70vh;
+}
+.servicebanner h1{
+    background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.5));
+    color: white;
+    padding-bottom: 1.5%;
+}
+.scard a{
+    text-decoration: none;
+}
+.scard img{
+    transition: 0.5s;
+}
+.scard img:hover{
+    transform: scale(1.2);
+}
+/* services done */
+
+/* careers */
+.carbanner{
+    background-image: url(../img/bnr_608085293.jpg);
+    height: 70vh;
+}
+.carbanner h1{
+    background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.5));
+    color: white;
+    padding-bottom: 1.5%;
+}
+.cform form{
+    outline: 2px solid gray;
+    padding: 20px;
+    border-radius: 1rem;
+    margin: 15px;
+}
+.cform h3{
+    color: red;
+}
+.cform span{
+    color: red;
+}
+.cform label{
+    font-weight: bold;
+    text-transform: uppercase;
+}
+/* .cform input{
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+} */
+.cform input:focus{
+    border: 2px solid green;
+    box-shadow: none;
+}
+.cform input[type=number]::-webkit-inner-spin-button,
+.cform input[type=number]::-webkit-outer-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+}
+/* .cform select{
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+} */
+.cform select:focus{
+    border: 2px solid green;
+    box-shadow: none;
+}
+.cform select.decorated option:hover{
+    box-shadow: 0 0 10px 10px green inset;
+}
+.cform .frow{
+    outline: 1px dashed gray;
+    padding: 10px;
+    margin: 5px;
+}
+/* careers done */
+
+/* Mobile styling */
+@media(max-width: 970px){
+    .topbar i{
+        color: white;
+        font-size: 15px;
+        cursor: pointer;
+    }
+    .topbar i:hover{
+        color: #ffa600;
+    }
+    .topbar h6{
+        color: white;
+    }
+    .topbar h6 span{
+        font-size: 10px;
+    }
+    .topbar h6 i{
+        font-size: 5px;
+    }
+    .topnav ul li{
+        margin-left: 4px;
+    }
+    .topnav img{
+        height: 30px;
+    }
+    .carofind{
+        margin-bottom: 15px;
+    }
+    .welcome h1{
+        padding-top: 5%;
+        text-transform: capitalize;
+        text-align: center;
+        font-size: 30px;
+        padding-bottom: 5%;
+    }
+    .welcimg img{
+        height: 200px;
+        margin-bottom: 10%;
+    }
+    .service h1{
+        text-align: center;
+        padding-top: 3%;
+        font-size: 30px;
+        color: green;
+        text-transform: capitalize;
+    }
+    .mission h1{
+        text-align: center;
+        padding-top: 10%;
+        font-size: 30px;
+        color: black;
+        text-transform: capitalize;
+    }
+    .appoint img{
+        padding: 5%;
+        height: 100px;
+        width: 100px;
+    }
+    .appoint p{
+        padding-top: 5%;
+        font-size: 12px;
+        font-weight: bold;
+        text-transform: capitalize;
+        margin-left: 15%;
+    }
+    .appoint p button{
+        background: green;
+        color: white;
+        border: none;
+        padding: 2%;
+        border-radius: 1rem;
+    }
+    .foota img{
+        height: 30px;
+        margin-bottom: 15%;
+    }
+    .footc i{
+        color: white;
+        font-size: 20px;
+    }
+    .aboutbanner{
+        background-image: url(../img/District-of-Columbia.jpg);
+        height: 40vh;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .about img{
+        height: 200px;
+    }
+    .servicebanner{
+        background-image: url(../img/District-of-Columbia.jpg);
+        height: 40vh;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .carbanner{
+        background-image: url(../img/bnr_608085293.jpg);
+        height: 40vh;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .cform form{
+        outline: 2px solid gray;
+        padding: 20px;
+        border-radius: 1rem;
+        margin: 1px;
+    }
+}
+/* Mobile styling done */

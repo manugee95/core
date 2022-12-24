@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block header %} {% include 'header.html' %} {% endblock header %}
+{% block carousel %} {% include 'carousel.html' %} {% endblock carousel %}
+{% block content %} 
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 col-md-8 welcome">
+            <h1>welcome to <span>oseshome</span> residential services</h1>
+            <p>If you would like to place your loved ones in a safe, nurturing, and warm setting, 
+                Oseshome Residential Services, Inc. is the right place. We will not only provide them with a home 
+                that meets their needs, but we will also offer support and training to prepare them with the knowledge 
+                and skills to help reach their goals and be active members of their community.
+                </p>
+            <p>With our qualified and competent staff, we will continue to ensure appropriate implementation and 
+                consistency in the delivery of programs and services.</p>
+        </div>
+        <div class="col-12 col-md-4 welcimg">
+            <img src="{% static '' %}img/main-img.png"> 
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-md-8 service">
+            <h1>our services</h1>
+            <div class="accordion" id="accordionPanelsStayOpenExample">
+                
+                {% for item in serviceinfo %}
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                        {{item.name|title}}
+                      </button>
+                    </h2>
+                    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingOne">
+                      <div class="accordion-body">
+                        <p>{{item.description|safe}}</p>
+                      </div>
+                    </div>
+                  </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="col-12 col-md-4 mission">
+            <h1>mission statement</h1>
+            <p>Our mission is to facilitate and support meaningful lifestyles for each individual we serve that 
+                directly focuses on their needs without regard to their disabilities. We seek to create a home 
+                setting that fosters wellness, dignity, respect, and independence to help them achieve fulfilling 
+                lives and be active members of their communities.</p>
+            <img src="{% static '' %}img/btm1-img.jpg" style="height: 300px;"> 
+        </div>
+    </div>
+</div>
+<div class="container mt-5 appoint">
+    <div class="row g-0">
+        <div class="col-3">
+            <img src="{% static '' %}img/bnr-img1.jpg">
+        </div>
+        <div class="col-9">
+            <p>Schedule your appointment for a detailed discussion of your needs. <a href=""><button>Click Here</button></a></p>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+{% block footer %} {% include 'footer.html' %} {% endblock footer %}

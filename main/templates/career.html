@@ -1,0 +1,395 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block header %} {% include 'header.html' %} {% endblock header %}
+{% block banner %} {% include 'careerbanner.html' %} {% endblock banner %}
+{% block content %} 
+
+<div class="container-fluid about mt-5 mb-5">
+  <div class="row mt-4 scont">
+    <div class="col-12">
+      <p>Do you want to experience a rewarding career? Are you passionate about giving care to others? 
+        Do you want to help make a positive impact in the lives of other people, especially those vulnerable 
+        ones? <br>
+
+        If so, please send us your application and become part of our team. We are looking for qualified 
+        applicants who can help us deliver outstanding services for our residents. If you share our passion 
+        and dedication, please submit your details using the employment form below. <br>
+        
+        We will review your application shortly. Then, applicants who are qualified will be interviewed and 
+        further evaluated for potential employment. <br>
+        
+        We are an equal opportunity employer and makes employment decisions based on merit. 
+        We are a non-discrimination residential care facility and prohibits unlawful discrimination based on race,
+         color, creed, age, gender, marital status, religion, national origin, or ancestry.</p>
+    </div>
+    <div class="cform">
+      <form class="mt-5" action="{% url 'career' %}" method="POST" enctype="multipart/form-data"> 
+        {% csrf_token %}
+        <h3 class="pb-3"><span>*</span>Required Information</h3>
+        <hr class="cline">
+        <!-- 2 column grid layout with text inputs for the first and last names -->
+        <div class="row mb-4">
+          <div class="col">
+            <div class="form-outline">
+              <label class="form-label" for="form6Example1">First name <span>*</span></label>
+              <input type="text" name="first_name" id="form6Example1" class="form-control" required/>
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-outline">
+              <label class="form-label" for="form6Example2">Last name <span>*</span></label>
+              <input type="text" name="last_name" id="form6Example2" class="form-control" required/>
+            </div>
+          </div>
+        </div>
+        <div class="row mb-4">
+          <div class="col">
+            <div class="form-outline">
+              <label class="form-label" for="form6Example1">Email <span>*</span></label>
+              <input type="email" name="email" id="form6Example1" class="form-control" required/>
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-outline">
+              <label class="form-label" for="form6Example2">Phone Number <span>*</span></label>
+              <input type="number" name="phone" id="form6Example2" class="form-control" required/>
+            </div>
+          </div>
+        </div>
+      
+        <!-- Text input -->
+        <div class="form-outline mb-4">
+          <label class="form-label" for="form6Example4">Address <span>*</span></label>
+          <input type="text" name="address" id="form6Example4" class="form-control" required/>
+        </div>
+      
+        <div class="row mb-4">
+          <div class="col">
+            <div class="form-outline">
+              <label class="form-label" for="form6Example1">City <span>*</span></label>
+              <input type="text" name="city" id="form6Example1" class="form-control" required/>
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-outline">
+              <label class="form-label" for="form6Example2">State <span>*</span></label>
+              <select name="state" id="" class="form-control" required>
+                <option value="" disabled selected hidden>Please select state</option>
+                {% for item in state %}
+                  <option value="">{{item.name}}</option>
+                {% endfor %}
+              </select>
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-outline">
+              <label class="form-label" for="form6Example2">Zip <span>*</span></label>
+              <input type="number" name="zip" id="form6Example2" class="form-control" required/>
+            </div>
+          </div>
+        </div>
+        <div class="row mb-4">
+          <div class="col">
+            <div class="form-outline">
+              <label class="form-label" for="form6Example1">Cell Number <span>*</span></label>
+              <input type="number" name="cell_number" id="form6Example1" class="form-control" required/>
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-outline">
+              <label class="form-label" for="form6Example2">Position Applied For <span>*</span></label>
+              <select name="position_applied" id="" class="form-control" required>
+                <option value="" disabled selected hidden>Please select</option>
+                {% for item in positionapp %}
+                  <option value="">{{item.name}}</option>
+                {% endfor %}
+              </select>
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-outline">
+              <label class="form-label" for="form6Example2">State Applied For <span>*</span></label>
+              <select name="state_applied" id="" class="form-control" required>
+                <option value="" disabled selected hidden>Please select</option>
+                {% for item in stateapp %}
+                  <option value="">{{item.name}}</option>
+                {% endfor %}
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Number input -->
+
+        <div class="form-outline mb-4">
+          <label class="form-label" for="form6Example2">Shift Applied For DC (District of columbia) <span>*</span></label>
+          <select name="shift_applied_dc" id="" class="form-control" required>
+            <option value="" disabled selected hidden>Please select</option>
+            {% for item in time %}
+              <option value="">{{item.name}}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="form-outline mb-4">
+          <label class="form-label" for="form6Example2">Shift Applied For Maryland <span>*</span></label>
+          <select name="shift_applied_maryland" id="" class="form-control" required>
+            <option value="" disabled selected hidden>Please select</option>
+            {% for item in time %}
+              <option value="">{{item.name}}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="form-outline mb-4">
+          <label class="form-label" for="form6Example2">Shift Applied For Virginia</label>
+          <select name="shift_applied_virginia" id="" class="form-control" required>
+            <option value="" disabled selected hidden>Please select</option>
+            {% for item in time %}
+              <option value="">{{item.name}}</option>
+            {% endfor %}
+          </select>
+        </div>
+
+        <hr>
+
+        <!-- <div class="form-outline mb-4">
+          <label class="form-label" for="form6Example6">Are you high school or ged?</label> <br>
+          <div class="row frow">
+            <div class="col">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions high_school_or_ged" id="inlineRadio1" value="option1" />
+                <label class="form-check-label" for="inlineRadio1">Yes</label>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions high_school_or_ged" id="inlineRadio2" value="option2" />
+                <label class="form-check-label" for="inlineRadio2">No</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mb-4">
+          <div class="col">
+            <div class="form-outline">
+              <label class="form-label" for="form6Example1">Date Attended (FROM) </label>
+              <input type="date" name="date_attended_from" id="form6Example1" class="form-control" required/>
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-outline">
+              <label class="form-label" for="form6Example2">Date Attended (To) </label>
+              <input type="date" name="date_attended_to" id="form6Example2" class="form-control" required/>
+            </div>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="form-outline mb-4">
+          <label class="form-label" for="form6Example6">College Graduate?</label> <br>
+          <div class="row frow">
+            <div class="col">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions2" name="college_graduate" id="inlineRadio3" value="option1" />
+                <label class="form-check-label" for="inlineRadio3">Yes</label>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions2" name="college_graduate" id="inlineRadio4" value="option2" />
+                <label class="form-check-label" for="inlineRadio4">No</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mb-4">
+          <div class="col">
+            <div class="form-outline">
+              <label class="form-label" for="form6Example1">Date Attended (FROM) </label>
+              <input type="date" name="college_graduate_from" id="form6Example1" class="form-control" required/>
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-outline">
+              <label class="form-label" for="form6Example2">Date Attended (To) </label>
+              <input type="date" name="college_graduate_to" id="form6Example2" class="form-control" required/>
+            </div>
+          </div>
+        </div>
+      
+        <hr>
+
+        <div class="form-outline mb-4">
+          <label class="form-label" for="form6Example6">ARE YOU LEGALLY ELIGIBLE FOR EMPLOYMENT IN THE UNITED STATES?</label> <br>
+          <div class="row frow">
+            <div class="col">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions3" name="eligible_in_the_us" id="inlineRadio5" value="option1" />
+                <label class="form-check-label" for="inlineRadio5">Yes</label>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions3" name="eligible_in_the_us" id="inlineRadio6" value="option2" />
+                <label class="form-check-label" for="inlineRadio6">No</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-outline mb-4">
+          <label class="form-label" for="form6Example6">HAVE YOU EVER BEEN CHARGE/CONVICTED OF A CRIME AND/OR RELEASE FROM CONFINEMENT FOLLOWING A CONVICTION FOR ANY CRIMINAL OFFENSE?</label> <br>
+          <div class="row frow">
+            <div class="col">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" name="convicted" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" type="radio" name="inlineRadioOptions4" id="inlineRadio7" value="option1" />
+                <label class="form-check-label" for="inlineRadio7">Yes</label>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions4" name="convicted" id="inlineRadio8" value="option2" />
+                <label class="form-check-label" for="inlineRadio8">No</label>
+              </div>
+            </div>
+            <div class="collapse" id="collapseExample">
+              <div class="card card-body">
+                <label class="form-label" for="form6Example4">Please Explain</label>
+                <textarea name="convicted_explain" id="" cols="20" rows="5"></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-outline mb-4">
+          <label class="form-label" for="form6Example6">ARE YOU PRESENTLY CHARGE WITH ANY VIOLATION OF THE LAW?</label> <br>
+          <div class="row frow">
+            <div class="col">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" name="violation" data-bs-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample" type="radio" name="inlineRadioOptions5" id="inlineRadio9" value="option1" />
+                <label class="form-check-label" for="inlineRadio9">Yes</label>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="violation" name="inlineRadioOptions5" id="inlineRadio10" value="option2" />
+                <label class="form-check-label" for="inlineRadio10">No</label>
+              </div>
+            </div>
+            <div class="collapse" id="collapseExample2">
+              <div class="card card-body">
+                <label class="form-label" for="form6Example4">Please Explain</label>
+                <textarea name="violation_explain" id="" cols="20" rows="5"></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-outline mb-4">
+          <label class="form-label" for="form6Example6">HAVE YOU HAD A CURRENT PHYSICAL WITHIN 1 YEAR?</label> <br>
+          <div class="row frow">
+            <div class="col">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" name="current_physical" data-bs-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample" type="radio" name="inlineRadioOptions6" id="inlineRadio11" value="option1" />
+                <label class="form-check-label" for="inlineRadio11">Yes</label>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" name="current_physical" type="radio" name="inlineRadioOptions6" id="inlineRadio12" value="option2" />
+                <label class="form-check-label" for="inlineRadio12">No</label>
+              </div>
+            </div>
+            <div class="collapse" id="collapseExample3">
+              <div class="card card-body">
+                <label class="form-label" for="form6Example4">Upload Attachment Here</label>
+                <input type="file" name="current_physical_upload" id="form6Example1" class="form-control" required/>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-outline mb-4">
+          <label class="form-label" for="form6Example6">HAVE YOU HAD A TB TEST WITHIN THE PAST YEAR?</label> <br>
+          <div class="row frow">
+            <div class="col">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" name="tbtest" data-bs-toggle="collapse" href="#collapseExample4" role="button" aria-expanded="false" aria-controls="collapseExample" type="radio" name="inlineRadioOptions7" id="inlineRadio13" value="option1" />
+                <label class="form-check-label" for="inlineRadio13">Yes</label>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" name="tbtest" type="radio" name="inlineRadioOptions7" id="inlineRadio14" value="option2" />
+                <label class="form-check-label" for="inlineRadio14">No</label>
+              </div>
+            </div>
+            <div class="collapse" id="collapseExample4">
+              <div class="card card-body">
+                <label class="form-label" for="form6Example4">ATTACH/ UPLOAD TB/XRAY RECORD</label>
+                <input type="file" name="tbtest_upload" id="form6Example1" class="form-control" required/>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-outline mb-4">
+          <label class="form-label" for="form6Example6">DO YOU HAVE A CURRENT CPR CERTIFICATION CARD?</label> <br>
+          <div class="row frow">
+            <div class="col">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" name="cpr_card" data-bs-toggle="collapse" href="#collapseExample5" role="button" aria-expanded="false" aria-controls="collapseExample" type="radio" name="inlineRadioOptions8" id="inlineRadio15" value="option1" />
+                <label class="form-check-label" for="inlineRadio15">Yes</label>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" name="cpr_card" type="radio" name="inlineRadioOptions8" id="inlineRadio16" value="option2" />
+                <label class="form-check-label" for="inlineRadio16">No</label>
+              </div>
+            </div>
+            <div class="collapse" id="collapseExample5">
+              <div class="card card-body">
+                <label class="form-label" for="form6Example4">ATTACH/ UPLOAD CPR CERTIFICATION CARD</label>
+                <input type="file" name="cpr_card_upload" id="form6Example1" class="form-control" required/>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-outline mb-4">
+          <label class="form-label" for="form6Example6">DO YOU HAVE A CURRENT FIRST AIDE CERTIFICATION CARD?</label> <br>
+          <div class="row frow">
+            <div class="col">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" name="first_aide_card" data-bs-toggle="collapse" href="#collapseExample6" role="button" aria-expanded="false" aria-controls="collapseExample" type="radio" name="inlineRadioOptions9" id="inlineRadio17" value="option1" />
+                <label class="form-check-label" for="inlineRadio17">Yes</label>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" name="first_aide_card" type="radio" name="inlineRadioOptions9" id="inlineRadio18" value="option2" />
+                <label class="form-check-label" for="inlineRadio18">No</label>
+              </div>
+            </div>
+            <div class="collapse" id="collapseExample6">
+              <div class="card card-body">
+                <label class="form-label" for="form6Example4">ATTACH/ UPLOAD FIRST AIDE CERTIFICATION CARD</label>
+                <input type="file" name="first_aide_upload" id="form6Example1" class="form-control" required/>
+              </div>
+            </div>
+          </div>
+        </div> -->
+        <div class="form-outline mb-4">
+          <label class="form-label" for="form6Example4">Attach Resume</label>
+          <input type="file" name="resume" id="form6Example4" class="form-control" required/>
+        </div>
+        <div class="form-outline mb-4">
+          <label class="form-label" for="form6Example4">Message</label>
+          <textarea class="form-control" name="message" id="" cols="20" rows="5"></textarea>
+        </div>
+      
+        <!-- Submit button -->
+        <button type="submit" class="btn btn-success btn-block mb-4">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock content %}
+{% block footer %} {% include 'footer.html' %} {% endblock footer %}

@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block header %} {% include 'header.html' %} {% endblock header %}
+{% block banner %} {% include 'servicebanner.html' %} {% endblock banner %}
+{% block content %} 
+
+<!-- content section -->
+<div class="container-fluid about mt-5 mb-5">
+  <h2 class="text-center">Providing you quality care and compassionate services.</h2>
+  <div class="row mt-4 scont">
+    <div class="col-12">
+      <p>Total Quality Residential Services, Inc. aims to provide comprehensive residential support services 
+          for youth and adult with an intellectual and developmental disability in the state of Virginia, Maryland,
+          and in the District of Columbia.
+
+        These services are dedicated to care and support for the whole person by providing them training, 
+        education, and access to community resources to help them achieve the best possible health and 
+        independence. We seek to help these people reach their full potential so they can become active members 
+        of their community without regard to their abilities.
+        
+        Here are the services we offer based on every location: <br>
+        <br>
+        <span>Maryland</span> <br>
+        We accept children from 0 to age 21 who have conditions ranging from mild prenatal drug exposure to the most complex conditions, such as ventilator dependence. Other common health issues served by our program include seizure disorders, cerebral palsy, shaken baby syndrome, reactive airway disease, and HIV/AIDS. We also accept adults with intellectual and/or physical disabilities.</p>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row mt-2 justify-content-center">
+      {% for item in maryland %}
+      <div class="col-12 col-md-6 col-lg-4 mt-4">
+        <div class="card scard">
+          <a href="">
+            <img src="{{item.pix.url}}" class="card-img-top" alt="...">
+            <div class="card-body bg-dark">
+              <h5 class="card-title text-white text-center">{{item.name|title}}</h5>
+            </div>
+          </a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="row mt-4 scont">
+    <p>
+      <span>Virginia</span> <br>
+      Our Residential Group Home Support services provide services to adults with intellectual and/or physical
+      disabilities. We help them improve and maintain their health and abilities. We also offer support to 
+      help them acquire new home living and community skills and demonstrate safe and appropriate behavior 
+      for their community.
+    </p>
+    <div class="container">
+      <div class="row mt-2 justify-content-center">
+        {% for item in virginia %}
+        <div class="col-12 col-md-6 col-lg-4 mt-4">
+          <div class="card scard">
+            <a href="">
+            <img src="{{item.pix.url}}" class="card-img-top" alt="...">
+              <div class="card-body bg-dark">
+                <h5 class="card-title text-white text-center">{{item.name|title}}</h5>
+              </div>
+            </a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  <div class="row mt-4 scont">
+    <p>
+      <span>District of Columbia</span> <br>
+      Our Residential Group Home Support services provide services to adults with intellectual and/or physical 
+      disabilities.
+    </p>
+  </div>
+  <div class="container">
+    <div class="row mt-2 justify-content-center">
+      {% for item in columbia %}
+      <div class="col-12 col-md-6 col-lg-4 mt-4">
+        <div class="card scard">
+          <a href="">
+            <img src="{{item.pix.url}}" class="card-img-top" alt="...">
+            <div class="card-body bg-dark">
+              <h5 class="card-title text-white text-center">{{item.name|title}}</h5>
+            </div>
+          </a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+<!-- content section done -->
+{% endblock content %}
+{% block footer %} {% include 'footer.html' %} {% endblock footer %}
